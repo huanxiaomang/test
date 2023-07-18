@@ -1,0 +1,38 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --exec electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cnpm": "^9.2.0",
+    "electron-rebuild": "^3.2.9",
+    "node-abi": "^3.45.0",
+    "node-keypress": "^1.0.4",
+    "nodemon": "^2.0.22"
+  },
+  "iohook": {
+    "targets": [
+      "node-108",
+      "electron-108"
+    ],
+    "platforms": [
+      "win32",
+      "darwin",
+      "linux"
+    ],
+    "arches": [
+      "x64",
+      "ia32"
+    ]
+  },
+  "devDependencies": {
+    "keypress": "^0.2.1"
+  }
+}
