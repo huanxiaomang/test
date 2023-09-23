@@ -13,24 +13,21 @@
   "dependencies": {
     "cnpm": "^9.2.0",
     "electron-rebuild": "^3.2.9",
-    "node-abi": "^3.45.0",
+    "express": "^4.18.2",
+    "node-abi": "^3.47.0",
     "node-keypress": "^1.0.4",
     "nodemon": "^2.0.22",
     "robotjs": "^0.6.0"
   },
   "iohook": {
     "targets": [
-      "node-108",
-      "electron-108"
+      "electron-116"
     ],
     "platforms": [
-      "win32",
-      "darwin",
-      "linux"
+      "win32"
     ],
     "arches": [
-      "x64",
-      "ia32"
+      "x64"
     ]
   },
   "devDependencies": {

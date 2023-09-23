@@ -104,9 +104,10 @@ function setKeyList(keyList) {
 
 init();
 
-// ipcRender.on('counter-value', (event, value) => {
-//     console.log(value);
-// })
+ipcRender.on('counter-value', (event, value) => {
+
+    console.log(value);
+})
 
 
-// window.electronAPI.handleCounter(keyDownHandler);
+window.electronAPI.handleCounter(keyDownHandler);

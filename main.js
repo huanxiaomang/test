@@ -1,5 +1,14 @@
 const { BrowserWindow, app, globalShortcut, ipcMain, shell, screen } = require('electron');
 const path = require('path');
+const nodeAbi = require('node-abi');
+const express = require('express');
+const { log } = require('console');
+
+//2.创建应用
+const app1 = express()
+
+//3.设置请求
+
 
 
 
@@ -31,14 +40,6 @@ const createWindow = () => {
     mainWindow.loadFile(path.resolve(__dirname, 'index.html'));
 
 
-    const keys = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', ',', '.', '/'];
-    keys.forEach((key) => {
-        globalShortcut.register(key, () => {
-            mainWindow.webContents.send('counter-value', key)
-        })
-    })
-
-
 }
 require('./ipcMain')
 app.whenReady().then(() => {
@@ -46,11 +47,18 @@ app.whenReady().then(() => {
     createWindow();
 
 })
-ipcMain.on('counter-value', (_event, value) => {
-
+//4.开启服务器
+app1.listen(8989, () => {
+    console.log('server is running at http://localhost')
 })
 
-ipcMain.on('file', (_event, value) => {
-    BrowserWindow.fromWebContents(event.sender).send('msg', '文件上传完成');
+ipcMain.on('counter-value', (_event, value) => {
+    app1.get('/', (req, res) => {
+        console.log(req.query);
+        res.send(200);
+        BrowserWindow.fromWebContents(_event.sender).send('counter-value', req.query.key.split('-')[0]);
+    })
+
+
 })
 
