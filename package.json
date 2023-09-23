@@ -15,7 +15,8 @@
     "electron-rebuild": "^3.2.9",
     "node-abi": "^3.45.0",
     "node-keypress": "^1.0.4",
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.22",
+    "robotjs": "^0.6.0"
   },
   "iohook": {
     "targets": [

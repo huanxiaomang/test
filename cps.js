@@ -1,4 +1,7 @@
 
+const useDrag = require('./useDrag')
+const { drag } = useDrag();
+drag.run();
 function $(val) {
     return document.querySelectorAll(val);
 }
@@ -44,7 +47,7 @@ function cpsRender(exp) {
         cpsText.innerHTML = expressions[Math.floor(Math.random() * expressions.length)];
     } else if (cps === 0) {
         cpsText.style.color = 'black';
-    }else if(cps !== 0){
+    } else if (cps !== 0) {
         if (cps < 4) {
             cpsText.style.color = '#01da71';
         } else if (cps < 8) {
@@ -106,4 +109,4 @@ init();
 // })
 
 
-window.electronAPI.handleCounter(keyDownHandler);
+// window.electronAPI.handleCounter(keyDownHandler);

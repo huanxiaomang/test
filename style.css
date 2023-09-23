@@ -1,8 +1,8 @@
-        html {
+html {
     -webkit-app-region: drag;
 }
 
-.item{
+.item {
     -webkit-app-region: no-drag;
 }
 
@@ -24,6 +24,7 @@ body {
 img {
     display: block;
     border-radius: 50vh;
+    -webkit-app-region: no-drag;
 }
 .container {
     display: flex;
@@ -39,9 +40,8 @@ img {
     font-weight: bold;
     text-align: center;
     color: rgb(44, 44, 44);
-
 }
-.text{
+.text {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -49,13 +49,13 @@ img {
     flex: 1;
     margin-left: -10%;
 }
-.key{
+.key {
     display: flex;
     width: 70%;
     justify-content: space-around;
     align-items: center;
 }
-.key .item{
+.key .item {
     text-align: center;
     width: 32px;
     height: 32px;
@@ -64,6 +64,6 @@ img {
     background-color: #e6e6e6;
     border-radius: 5px;
 }
-.text span{
+.text span {
     display: inline;
 }

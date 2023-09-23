@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
-    
+
 </head>
 
 <body>
@@ -28,7 +28,19 @@
 
     <script src="./cps.js"></script>
     <script>
-        document.onselectstart = ()=>false;
+        document.onselectstart = () => false;
+
+        function $(val) {
+            return document.querySelectorAll(val);
+        }
+        $('img')[0].onclick = async () => {
+            console.log('s');
+            let img = await window.api.selectFilePreload();
+            console.log(img);
+            $('img')[0].src = img.filePaths[0];
+        }
+
+        
     </script>
 
 
